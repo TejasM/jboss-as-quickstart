@@ -144,6 +144,7 @@
                 <module>ejb-security</module>
                 <module>ejb-security-interceptors</module>
                 <module>greeter</module>
+                <module>greeter-spring</module>
                 <module>helloworld</module>
                 <module>helloworld-errai</module>
                 <module>helloworld-gwt</module>
@@ -167,12 +168,14 @@
                 <module>kitchensink-ml</module>
                 <module>kitchensink-ml-ear</module>
                 <module>kitchensink-rf</module>
+                <module>kitchensink-spring</module>
                 <module>log4j</module>
                 <module>logging-tools</module>
                 <module>mail</module>
                 <module>memcached-endpoint</module>
                 <module>numberguess</module>
                 <module>payment-cdi-event</module>
+                <module>petclinic-spring</module>
                 <module>rest-endpoint</module>
                 <module>richfaces-validation</module>
                 <module>servlet-async</module>
@@ -183,6 +186,7 @@
                 <module>tasks-jsf</module>
                 <module>tasks-rs</module>
                 <module>temperature-converter</module>
+                <module>travel-spring</module>
                 <module>wicket-ear</module>
                 <module>wicket-war</module>
                 <module>xml-dom4j</module>
