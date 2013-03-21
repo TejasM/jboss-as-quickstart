@@ -1,6 +1,6 @@
 petclinic-spring: PetClinic Example using Spring 3.1
 
-Level: Advanced Technologies: This example demonstrates the use of JPA 2.0, Junit, JMX, and JSP in JBoss Enterprise Application Platform 6 or JBoss AS 7.
+Level: Advanced Technologies: This example demonstrates the use of JPA 2.0, Junit, JMX, Spring MVC Annotations, Spring Data, Thymeleaf, webjars, and Dandellion in JBoss Enterprise Application Platform 6 or JBoss AS 7.
 
 All you need to build this project is Java 6.0 (Java SDK 1.6) or better, Maven 3.0 or better.
 
@@ -20,14 +20,14 @@ All you need to build this project is Java 6.0 (Java SDK 1.6) or better, Maven 3
 ==========================================================================
 
 PetClinic features alternative DAO implementations and application
-configurations for JDBC, Hibernate, and JPA, with HSQLDB and MySQL as
+configurations for JDBC, JPA, and Spring Data JPA, with HSQLDB and MySQL as
 target databases. The default PetClinic configuration is JDBC on HSQLDB.
-See "src/main/resources/jdbc.properties" as well as web.xml and
-applicationContext-*.xml in the "src/main/webapp/WEB-INF" folder for
+See "src/main/resources/spring/data-access.properties" as well as web.xml and
+business-config.xml in the "src/main/resources/spring" folder for
 details. A simple comment change in web.xml switches between the data
 access strategies.
 
-The JDBC and Hibernate versions of PetClinic also demonstrate JMX support
+The JDBC and JPA versions of PetClinic also demonstrate JMX support
 via the use of <context:mbean-export/> for exporting MBeans.
 SimpleJdbcClinic exposes the SimpleJdbcClinicMBean management interface
 via JMX through the use of the @ManagedResource and @ManagedOperation
@@ -38,11 +38,10 @@ JConsole to manage the exported bean.
 All data access strategies can work with JTA for transaction management by
 activating the JtaTransactionManager and a JndiObjectFactoryBean that
 refers to a transactional container DataSource. The default for JDBC is
-DataSourceTransactionManager; for Hibernate, HibernateTransactionManager;
-for JPA, JpaTransactionManager. Those local strategies allow for working
+DataSourceTransactionManager and for JPA and Spring Data JPA, JpaTransactionManager. Those local strategies allow for working
 with any locally defined DataSource.
 
-Note that the sample configurations for JDBC, Hibernate, and JPA configure
+Note that the sample configurations for JDBC, JPA, and Spring Data JPA configure
 a BasicDataSource from the Apache Commons DBCP project for connection
 pooling.
 
@@ -73,7 +72,7 @@ the "db/mysql" subdirectory. Follow the steps outlined in
 "db/mysql/petclinic_db_setup_mysql.txt" for explicit details.
 
 In you intend to use a local DataSource, the JDBC settings can be adapted
-in "src/main/resources/jdbc.properties". To use a JTA DataSource, you need
+in "src/main/resources/spring/datasource-config.xml". To use a JTA DataSource, you need
 to set up corresponding DataSources in your Java EE container.
 
 Notes on enabling Log4J:
